@@ -1,0 +1,65 @@
+{{test}}
+<div class="container col-xs-12 col-md-8 col-lg-6">
+ {{success}}
+  <input type="text" placeholder="Name" ng-model="newBean.name">
+  <input type="text" placeholder="Region" ng-model="newBean.region">
+  <input type="text" placeholder="Description" ng-model="newBean.description">
+   <h4>Flavor Notes:</h4>
+    <div class="percentage-cur" ng-init="data[0]=0">
+        <input class="progress-slider" type="range" min="0" max="50" ng-model="data[0]">
+        <span class="num">{{ data[0] }}</span>
+        <span class="notes-text">FLORAL</span>
+    </div>
+    <div class="percentage-cur" ng-init="data[1]=0">
+        <input class="progress-slider" type="range" min="0" max="50" ng-model="data[1]">
+        <span class="num">{{ data[1] }}</span>
+        <span class="notes-text">FRUITTY</span>
+    </div>
+    <div class="percentage-cur" ng-init="data[2]=0">
+        <input class="progress-slider" type="range" min="0" max="50" ng-model="data[2]">
+        <span class="num">{{ data[2] }}</span>
+        <span class="notes-text">SOUR</span>
+    </div>
+    <div class="percentage-cur" ng-init="data[3]=0">
+        <input class="progress-slider" type="range" min="0" max="50" ng-model="data[3]">
+        <span class="num">{{ data[3] }}</span>
+        <span class="notes-text">LEAFY</span>
+    </div>
+    <div class="percentage-cur" ng-init="data[4]=0">
+        <input class="progress-slider" type="range" min="0" max="50" ng-model="data[4]">
+        <span class="num">{{ data[4] }}</span>
+        <span class="notes-text">ROASTED</span>
+    </div>
+    <div class="percentage-cur" ng-init="data[5]=0">
+        <input class="progress-slider" type="range" min="0" max="50" ng-model="data[5]">
+        <span class="num">{{ data[5] }}</span>
+        <span class="notes-text">SPICED</span>
+    </div>
+    <div class="percentage-cur" ng-init="data[6]=0">
+        <input class="progress-slider" type="range" min="0" max="50" ng-model="data[6]">
+        <span class="num">{{ data[6] }}</span>
+        <span class="notes-text">NUTTY</span>
+    </div>
+    <div class="percentage-cur" ng-init="data[7]=0">
+        <input class="progress-slider" type="range" min="0" max="50" ng-model="data[7]">
+        <span class="num">{{ data[7] }}</span>
+        <span class="notes-text">CHOCOLATE</span>
+    </div>
+    <div class="percentage-cur" ng-init="data[8]=0">
+        <input class="progress-slider" type="range" min="0" max="50" ng-model="data[8]">
+        <span class="num">{{ data[8] }}</span>
+        <span class="notes-text">SWEET</span>
+    </div>
+    <button ng-click="submitBean(data, newBean)">Submit</button>
+</div>
+
+
+<div class="col-xs-6 col-lg-6 col-xs-offset-1 col-lg-offset-1 " ac-chart="radar-chart">
+
+    <canvas id="radar" class="chart chart-radar" chart-data="data" chart-options="options" chart-labels="labels">
+    </canvas>
+</div>
+<div class="col-xs-4 col-lg-4 col-xs-offset-1 col-lg-offset-1 " ac-chart="radar-chart">
+    <canvas id="pie" class="chart chart-pie" chart-data="data" chart-labels="labels" chart-options="options">
+    </canvas>
+</div>

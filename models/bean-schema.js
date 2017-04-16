@@ -9,7 +9,7 @@ var BeanSchema = new Schema(
     variety: String,
     region: String,
     roast: String,
-    flavorNotes: [String],
+    flavorNotes: [Number],
     description: String
     
 }

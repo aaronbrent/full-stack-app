@@ -12,17 +12,17 @@ app.service("httpService", function ($http) {
         });
     }
 
-    this.createPost = function (newPost) {
+    this.addBean = function (newBean) {
         var post = {};
-        return $http.post('http://localhost:8000/bean/', newPost)
+        return $http.post('http://localhost:8000/bean/', newBean)
             .then(function (response) {
                 console.log(response.data);
-                post = response.data;
-                return post;
+                bean = response.data;
+                return bean;
             });
     }
 
-    this.deletePost = function (bean) {
+    this.deleteBean = function (bean) {
         var id = bean._id
         return $http.delete('http://localhost:8000/bean/' + id).then(function (response) {
             return "You have deleted the item with id " + id;

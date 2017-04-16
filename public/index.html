@@ -1,17 +1,33 @@
 <!DOCTYPE html>
 <html lang="en" ng-app="coffeeApp">
+
 <head>
     <meta charset="UTF-8">
     <title>Document</title>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
+    <link rel="stylesheet" href="styles.css">
 </head>
+
 <body>
-   
-   <ng-view></ng-view>
-   
+    <nav class='container col-sm-10 col-lg-10'>
+        <ul class="nav nav-pills nav-justified">
+            <li role="presentation"><a href="/#/home">Home</a></li>
+            <li role="presentation"><a href="/#/bean-find">Bean Finder</a></li>
+            <li role="presentation"><a href="/#/add-bean">Add a Bean</a></li>
+        </ul>
+    </nav>
+
+    <ng-view></ng-view>
+
     <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.5.6/angular.js"></script>
     <script src="//ajax.googleapis.com/ajax/libs/angularjs/1.5.6/angular-route.js"></script>
+    <script src="/bower_components/chart.js/dist/Chart.js"></script>
+    <script src="/bower_components/angular-chart.js/angular-chart.js"></script>
     <script src="app.js"></script>
     <script src="services.js"></script>
     <script src="home/home.js"></script>
+    <script src="bean-find/bean-find.js"></script>
+    <script src="add-bean/add-bean.js"></script>
 </body>
+
 </html>
