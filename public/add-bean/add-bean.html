@@ -1,56 +1,87 @@
 {{test}}
 <div class="container col-xs-12 col-md-8 col-lg-6">
- {{success}}
-  <input type="text" placeholder="Name" ng-model="newBean.name">
-  <input type="text" placeholder="Region" ng-model="newBean.region">
-  <input type="text" placeholder="Description" ng-model="newBean.description">
-   <h4>Flavor Notes:</h4>
-    <div class="percentage-cur" ng-init="data[0]=0">
-        <input class="progress-slider" type="range" min="0" max="50" ng-model="data[0]">
-        <span class="num">{{ data[0] }}</span>
-        <span class="notes-text">FLORAL</span>
+    <div class="jumbotron col-xs-12 col-md-8 col-lg-6">
+        <div ng-show="success" class="alert alert-success">
+            <h5>You successfully added <strong>{{success}}</strong></h5>
+        </div>
+        <div class="well">
+            <input type="text" placeholder="Name" ng-model="newBean.name" />
+            <input type="text" placeholder="Place of Origin" ng-model="newBean.region" />
+            <input type="text" placeholder="Description" ng-model="newBean.description" />
+
+        </div>
+        <div class="well">
+
+            <h4>Roast</h4>
+            <select ng-model="newBean.roast" name="roast">
+                <option value="Light" selected="selected">Light</option>
+                <option value="Medium">Medium</option>
+                <option value="Dark">Dark</option>
+                <option value="Raw/Green">Raw/Green</option>
+                
+            </select>
+
+            <h4>Species</h4>
+            <select ng-model="newBean.species" name="species">
+                <option value="Arabica" selected="selected">Arabica</option>
+                <option value="Robusta">Robusta</option>
+                <option value="Blend">Blend</option>
+                
+            </select>
+
+        </div>
+        <h4>Flavor Notes:</h4>
+        <div class="well col-sm-4 col-md-4 col-lg-4 ">
+            
+            <span class="notes">{{ data[0] }} FLORAL</span>
+            <div class="percentage-cur" ng-init="data[0]=0">
+                
+                <input class="progress-slider" type="range" min="0" max="10" ng-model="data[0]">
+            </div>
+
+            <div class="percentage-cur" ng-init="data[1]=0">
+                <span class="notes-text">{{ data[1] }} FRUITTY</span>
+                <input class="progress-slider" type="range" min="0" max="10" ng-model="data[1]">
+            </div>
+            
+            <div class="percentage-cur" ng-init="data[2]=0">
+                <span class="notes-text">{{ data[2] }} SOUR</span>
+                <input class="progress-slider" type="range" min="0" max="10" ng-model="data[2]">
+            </div>
+            
+            <div class="percentage-cur" ng-init="data[3]=0">
+                <span class="notes-text">{{ data[3] }} LEAFY</span>
+                <input class="progress-slider" type="range" min="0" max="10" ng-model="data[3]">
+            </div>
+            
+            <div class="percentage-cur" ng-init="data[4]=0">
+                <span class="notes-text">{{ data[4] }} ROASTED</span>
+                <input class="progress-slider" type="range" min="0" max="10" ng-model="data[4]">
+            </div>
+            
+            <div class="percentage-cur" ng-init="data[5]=0">
+                <span class="notes-text">{{ data[5] }} SPICED</span>
+                <input class="progress-slider" type="range" min="0" max="10" ng-model="data[5]">
+            </div>
+            
+            <div class="percentage-cur" ng-init="data[6]=0">
+                <span class="notes-text">{{ data[6] }} NUTTY</span>
+                <input class="progress-slider" type="range" min="0" max="10" ng-model="data[6]">
+            </div>
+            
+            <div class="percentage-cur" ng-init="data[7]=0">
+                <span class="notes-text">{{ data[7] }} CHOCOLATE</span>
+                <input class="progress-slider" type="range" min="0" max="10" ng-model="data[7]">
+            </div>
+            
+            <div class="percentage-cur" ng-init="data[8]=0">
+                <span class="notes-text">{{ data[8] }} SWEET</span>
+                <input class="progress-slider" type="range" min="0" max="10" ng-model="data[8]">
+            </div>
+            
+            <button class="btn btn-primary" ng-click="submitBean(data, newBean)">Submit</button>
+        </div>
     </div>
-    <div class="percentage-cur" ng-init="data[1]=0">
-        <input class="progress-slider" type="range" min="0" max="50" ng-model="data[1]">
-        <span class="num">{{ data[1] }}</span>
-        <span class="notes-text">FRUITTY</span>
-    </div>
-    <div class="percentage-cur" ng-init="data[2]=0">
-        <input class="progress-slider" type="range" min="0" max="50" ng-model="data[2]">
-        <span class="num">{{ data[2] }}</span>
-        <span class="notes-text">SOUR</span>
-    </div>
-    <div class="percentage-cur" ng-init="data[3]=0">
-        <input class="progress-slider" type="range" min="0" max="50" ng-model="data[3]">
-        <span class="num">{{ data[3] }}</span>
-        <span class="notes-text">LEAFY</span>
-    </div>
-    <div class="percentage-cur" ng-init="data[4]=0">
-        <input class="progress-slider" type="range" min="0" max="50" ng-model="data[4]">
-        <span class="num">{{ data[4] }}</span>
-        <span class="notes-text">ROASTED</span>
-    </div>
-    <div class="percentage-cur" ng-init="data[5]=0">
-        <input class="progress-slider" type="range" min="0" max="50" ng-model="data[5]">
-        <span class="num">{{ data[5] }}</span>
-        <span class="notes-text">SPICED</span>
-    </div>
-    <div class="percentage-cur" ng-init="data[6]=0">
-        <input class="progress-slider" type="range" min="0" max="50" ng-model="data[6]">
-        <span class="num">{{ data[6] }}</span>
-        <span class="notes-text">NUTTY</span>
-    </div>
-    <div class="percentage-cur" ng-init="data[7]=0">
-        <input class="progress-slider" type="range" min="0" max="50" ng-model="data[7]">
-        <span class="num">{{ data[7] }}</span>
-        <span class="notes-text">CHOCOLATE</span>
-    </div>
-    <div class="percentage-cur" ng-init="data[8]=0">
-        <input class="progress-slider" type="range" min="0" max="50" ng-model="data[8]">
-        <span class="num">{{ data[8] }}</span>
-        <span class="notes-text">SWEET</span>
-    </div>
-    <button ng-click="submitBean(data, newBean)">Submit</button>
 </div>
 
 

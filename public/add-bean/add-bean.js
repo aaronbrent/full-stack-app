@@ -3,6 +3,7 @@ var app = angular.module('coffeeApp');
 app.controller("addCtrl", function($scope, httpService){
 //    $scope.test="it's connected"
     
+    
     $scope.submitBean = function (data, newBean){
         var flavorNotes = [];
         
@@ -22,7 +23,7 @@ app.controller("addCtrl", function($scope, httpService){
             
         });
         
-        $scope.success = "You've successfully added " + newBean.name;
+        $scope.success = newBean.name;
         }
          
  

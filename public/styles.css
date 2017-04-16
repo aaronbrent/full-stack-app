@@ -1,3 +1,11 @@
-.notes-text {
-    text-align: center;
+ .notes {
+    display: inline;
+}
+
+.percentage-cur{
+    display: inline;
+}
+h4, h6{
+    display: inline;
+    margin-right: 10px;
 }
