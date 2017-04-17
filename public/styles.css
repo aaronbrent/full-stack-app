@@ -1,4 +1,10 @@
- .notes {
+body{
+    color:rgba(55, 37, 5);
+} 
+* a:hover { 
+    background-color: yellow;
+}
+.notes {
     display: inline;
 }
 
@@ -7,5 +13,31 @@
 }
 h4, h6{
     display: inline;
-    margin-right: 10px;
+    margin-right: 5px;
+    margin-left: 10px;
+}
+h5{
+    margin: 5px;
+}
+
+h3 {
+    text-align: center;
+}
+
+.jumbotron{
+    border: 1px solid rgba(132, 100, 46, 0.5);
+    background-color: white;
+}
+
+.well{
+    background-color:white;
+    border-color: rgba(132, 100, 46, 0.05);
+}
+.btn {
+    margin-top: 10px;
+}
+.chart {
+    width: 300px;
+    height: auto;
+    margin-left: 10%
 }

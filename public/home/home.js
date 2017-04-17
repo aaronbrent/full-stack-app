@@ -6,6 +6,12 @@ app.controller("homeCtrl", function($scope, httpService){
     httpService.getCall().then(function(beans){
         
         $scope.beans = beans;
-        console.log($scope.beans[0].name);
+//        $scope.data = beans.flavorNotes;
+        
     });
+    
+    
+
+    
+    $scope.labels = ["FLORAL", "FRUITTY", "SOUR", "LEAFY", "ROASTED", "SPICED", "NUTTY", "CHOCOLATE", "SWEET"];
 });

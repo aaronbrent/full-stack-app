@@ -6,9 +6,10 @@ var BeanSchema = new Schema(
 {
     name: String,
     species: String,
-    variety: String,
+    varietal: String,
     region: String,
     roast: String,
+    url: String,
     flavorNotes: [Number],
     description: String
     

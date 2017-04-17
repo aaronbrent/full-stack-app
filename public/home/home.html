@@ -1,5 +1,20 @@
-{{test}}
 
-<h1>Recommended</h1>
-<h1>{{beans[0].name}}</h1>
-<p>{{beans[0].description}}</p>
+
+
+<div class="container col-xs-12 col-md-8 col-lg-6">
+<div class="jumbotron col-xs-12 col-md-8 col-lg-6">
+<h2>Recommended</h2>
+<div class="well" ng-repeat="bean in beans track by $index">
+    <h3>{{bean.name}}</h3>
+    <h5> {{bean.varietal}} Varietal</h5><br>
+    <h5>{{bean.roast}} Roast</h5><br>
+    <h5>Originating from {{bean.region}} </h5><br>
+    <p>{{bean.description}}</p><br>
+    <a ng-href="{{bean.url}}">Purchase</a>
+    <div class="chart" ac-chart="radar-chart">
+
+    <canvas id="radar" class="chart chart-radar" chart-data="bean.flavorNotes" chart-options="options" chart-labels="labels">
+    </canvas>
+</div>
+</div>
+</div>
