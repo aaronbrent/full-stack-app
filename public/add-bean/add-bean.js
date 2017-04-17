@@ -6,13 +6,19 @@ app.controller("addCtrl", function($scope, httpService){
     
     $scope.submitBean = function (data, newBean){
         var flavorNotes = [];
+        var labels = [];
         
         for (var i = 0; i < data.length; i++){
                 
-                flavorNotes.push(parseInt(data[i]));
+                if(data[i] != 0) {
+                   flavorNotes.push(parseInt(data[i]));
+                    labels.push($scope.labels[i])
+            }
                 
             }
+        
         newBean.flavorNotes = flavorNotes;
+        newBean.labels = labels;
         
         console.log(newBean);  
         

@@ -5,12 +5,13 @@ var Schema = mongoose.Schema;
 var BeanSchema = new Schema(
 {
     name: String,
-    species: String,
+    process: String,
     varietal: String,
     region: String,
     roast: String,
     url: String,
     flavorNotes: [Number],
+    labels: [String],
     description: String
     
 }

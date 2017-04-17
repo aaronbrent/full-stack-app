@@ -1,14 +1,12 @@
 body{
     color:rgba(55, 37, 5);
 } 
-* a:hover { 
-    background-color: yellow;
-}
-.notes {
+
+div * .notes-text {
     display: inline;
 }
 
-.percentage-cur{
+div * .progress-slider{
     display: inline;
 }
 h4, h6{
@@ -40,4 +38,23 @@ h3 {
     width: 300px;
     height: auto;
     margin-left: 10%
+}
+
+.flavor-notes{
+    display: inline;
+}
+
+#select-roast{
+    margin-left: 18px;
+}
+#select-variatal{
+    margin-left: 6px;  
+}
+
+.pie-chart {
+    margin-top:70px;
+}
+
+.chart-colors{
+    color: red;
 }

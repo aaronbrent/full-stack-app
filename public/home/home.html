@@ -9,11 +9,12 @@
     <h5> {{bean.varietal}} Varietal</h5><br>
     <h5>{{bean.roast}} Roast</h5><br>
     <h5>Originating from {{bean.region}} </h5><br>
+    <h5>{{bean.process}} Processing</h5><br>
     <p>{{bean.description}}</p><br>
     <a ng-href="{{bean.url}}">Purchase</a>
     <div class="chart" ac-chart="radar-chart">
 
-    <canvas id="radar" class="chart chart-radar" chart-data="bean.flavorNotes" chart-options="options" chart-labels="labels">
+    <canvas id="radar" class="chart chart-radar" chart-data="bean.flavorNotes" chart-options="options" chart-labels="bean.labels" chart-colors="colors">
     </canvas>
 </div>
 </div>

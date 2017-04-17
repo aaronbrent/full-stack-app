@@ -10,8 +10,26 @@ app.controller("homeCtrl", function($scope, httpService){
         
     });
     
+    $scope.colors =  [
+        {
+        backgroundColor: "rgba(243, 237, 220, 0.5)",
+        borderColor: "rgba(243, 237, 220, 0.5)",
+        pointBackgroundColor: "rgba(243, 237, 220, 0.5)",
+        pointBorderColor: "#fff",
+        pointHoverBackgroundColor: "rgba(159,204,0,0.8)",
+        pointHoverBorderColor: "rgba(159,204,0,1)"
+        }
+    ]
     
-
-    
-    $scope.labels = ["FLORAL", "FRUITTY", "SOUR", "LEAFY", "ROASTED", "SPICED", "NUTTY", "CHOCOLATE", "SWEET"];
+    $scope.options = {
+    scale: {
+        ticks: {
+            beginAtZero: true,
+            userCallback: function (value, index, values) {
+                
+                return value;
+            }
+        }
+    }
+    }
 });
