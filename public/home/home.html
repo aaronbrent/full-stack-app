@@ -1,21 +1,28 @@
-
-
-
 <div class="container col-xs-12 col-md-8 col-lg-6">
-<div class="jumbotron col-xs-12 col-md-8 col-lg-6">
-<h2>Recommended</h2>
-<div class="well" ng-repeat="bean in beans track by $index">
-    <h3>{{bean.name}}</h3>
-    <h5> {{bean.varietal}} Varietal</h5><br>
-    <h5>{{bean.roast}} Roast</h5><br>
-    <h5>Originating from {{bean.region}} </h5><br>
-    <h5>{{bean.process}} Processing</h5><br>
-    <p>{{bean.description}}</p><br>
-    <a ng-href="{{bean.url}}">Purchase</a>
-    <div class="chart" ac-chart="radar-chart">
+    <div class="jumbotron col-xs-12 col-md-8 col-lg-6">
+        <h3>Recommended</h3>
+        <div class="well" ng-repeat="bean in beans | orderObjectBy: 'rank' track by $index">
+            <h3>{{bean.name}}</h3>
+            <h5> {{bean.varietal}} Varietal</h5><br>
+            <h5>{{bean.roast}} Roast</h5><br>
+            <h5>Originating from {{bean.region}} </h5><br>
+            <h5>{{bean.process}} Processing</h5><br>
+            <p>{{bean.description}}</p><br>
+            <a ng-href="{{bean.url}}">Purchase</a>
 
-    <canvas id="radar" class="chart chart-radar" chart-data="bean.flavorNotes" chart-options="options" chart-labels="bean.labels" chart-colors="colors">
-    </canvas>
-</div>
-</div>
-</div>
+            <div ng-hide="bean.pieChart" class="chart" ac-chart="radar-chart">
+                <canvas id="radar" class="chart chart-radar" chart-data="bean.flavorNotes" chart-options="options" chart-labels="bean.labels" chart-colors="colors">
+                </canvas>
+            </div>
+            <div ng-show="bean.pieChart" class="chart" ac-chart="pie-chart">
+                <canvas id="pie" class="chart chart-pie" chart-data="bean.flavorNotes" chart-labels="bean.labels" chart-options="options">
+                </canvas>
+            </div>
+            
+            <img ng-src="{{bean.image}}"/>
+            <div class="row">
+                <i class="fa fa-thumbs-o-up fa-2x" aria-hidden="true" ng-click="upRank(bean)"></i>
+                <i class="fa fa-thumbs-o-down fa-2x" aria-hidden="true" ng-click="downRank(bean)"></i>
+            </div>
+        </div>
+    </div>

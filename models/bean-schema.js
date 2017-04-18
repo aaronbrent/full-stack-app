@@ -9,7 +9,10 @@ var BeanSchema = new Schema(
     varietal: String,
     region: String,
     roast: String,
+    rank: Number,
     url: String,
+    image: String,
+    pieChart: Boolean,
     flavorNotes: [Number],
     labels: [String],
     description: String

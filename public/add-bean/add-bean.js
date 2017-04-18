@@ -11,7 +11,7 @@ app.controller("addCtrl", function($scope, httpService){
         for (var i = 0; i < data.length; i++){
                 
                 if(data[i] != 0) {
-                   flavorNotes.push(parseInt(data[i]));
+                    flavorNotes.push(parseInt(data[i]));
                     labels.push($scope.labels[i])
             }
                 
@@ -20,7 +20,13 @@ app.controller("addCtrl", function($scope, httpService){
         newBean.flavorNotes = flavorNotes;
         newBean.labels = labels;
         
-        console.log(newBean);  
+        if (flavorNotes.length < 3){
+            newBean.pieChart = true;
+        } else {
+            newBean.pieChart = false;
+        }
+        
+        newBean.rank = 0; 
         
         httpService.addBean(newBean).then(function(bean){
             $scope.newBean = {}

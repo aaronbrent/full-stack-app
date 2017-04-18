@@ -32,7 +32,7 @@ app.service("httpService", function ($http) {
 
 
     this.editBean = function (bean) {
-        return $http.put('http://localhost:8000/bean/' + issue._id, issue);
+        return $http.put('http://localhost:8000/bean/' + bean._id, bean);
     }
 
 

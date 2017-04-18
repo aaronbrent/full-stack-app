@@ -22,14 +22,20 @@ app.controller("homeCtrl", function($scope, httpService){
     ]
     
     $scope.options = {
-    scale: {
-        ticks: {
-            beginAtZero: true,
-            userCallback: function (value, index, values) {
-                
-                return value;
+        scale: {
+            ticks: {
+                beginAtZero: true,
+                max: 10
+
             }
         }
     }
+    
+    $scope.upRank = function (bean){ 
+        bean.rank++;
+            console.log("click")
+            httpService.editBean(bean).then(function(beans){
+            });
+        
     }
 });
