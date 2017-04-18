@@ -41,8 +41,8 @@ h3 {
 }
 
 img{
-    height: 200px;
-    width: auto;
+    max-height: 90%;
+    max-width:  90%;
     
 }
 
@@ -68,4 +68,7 @@ img{
 i:hover{
     cursor: pointer;
     color:saddlebrown;
+}
+p{
+    font-size: 8px;
 }

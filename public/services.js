@@ -11,6 +11,16 @@ app.service("httpService", function ($http) {
 
         });
     }
+    
+    this.findBean = function (searchBean) {
+        var list = {};
+        return $http.get('http://localhost:8000/bean/' + searchBean).then(function (response) {
+            
+            list = response.data;
+            return list;
+
+        });
+    }
 
     this.addBean = function (newBean) {
         var post = {};

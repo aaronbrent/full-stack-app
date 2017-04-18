@@ -38,4 +38,12 @@ app.controller("homeCtrl", function($scope, httpService){
             });
         
     }
+    
+    $scope.downRank = function (bean){ 
+        bean.rank--;
+            console.log("click")
+            httpService.editBean(bean).then(function(beans){
+            });
+        
+    }
 });

@@ -1,14 +1,25 @@
-<div class="container col-xs-12 col-md-8 col-lg-6">
-    <div class="jumbotron col-xs-12 col-md-8 col-lg-6">
-        <h3>Recommended</h3>
-        <div class="well" ng-repeat="bean in beans | orderObjectBy: 'rank' track by $index">
-            <h3>{{bean.name}}</h3>
-            <h5> {{bean.varietal}} Varietal</h5><br>
-            <h5>{{bean.roast}} Roast</h5><br>
-            <h5>Originating from {{bean.region}} </h5><br>
-            <h5>{{bean.process}} Processing</h5><br>
-            <p>{{bean.description}}</p><br>
-            <a ng-href="{{bean.url}}">Purchase</a>
+<div class="container col-xs-12 col-md-12 col-lg-12">
+    <div class="jumbotron col-xs-12 col-md-12 col-lg-12">
+        <h3>Recommended</h3><br>
+        <div class="well col-xs-12 col-sm-6 col-md-6 col-lg-6" ng-repeat="bean in beans | orderBy: '-rank' track by $index">
+            <div class='bean-name col-xs-12 col-lg-12'>
+                <h3>{{bean.name}}</h3>
+            </div>
+            <div class='col-xs-6 col-lg-6'>
+                
+                <h5> {{bean.varietal}} Varietal</h5><br>
+                <h5>{{bean.roast}} Roast</h5><br>
+                <h5>Originating from {{bean.region}} </h5><br>
+                <h5>{{bean.process}} Processing</h5><br>
+                
+            </div>
+            <div class="col-xs-6 col-lg-6">
+                <img ng-src="{{bean.image}}"/><br>
+                <a ng-href="{{bean.url}}">Purchase</a>
+            </div><br>
+            <div class='row col-xs-12 col-lg-12'>
+            <p>{{bean.description}}</p>
+            </div>
 
             <div ng-hide="bean.pieChart" class="chart" ac-chart="radar-chart">
                 <canvas id="radar" class="chart chart-radar" chart-data="bean.flavorNotes" chart-options="options" chart-labels="bean.labels" chart-colors="colors">
@@ -19,8 +30,8 @@
                 </canvas>
             </div>
             
-            <img ng-src="{{bean.image}}"/>
-            <div class="row">
+            <div class="row col-xs-2 col-lg-2 col-xs-offset-9 col-lg-offset-9">
+               {{bean.rank}}
                 <i class="fa fa-thumbs-o-up fa-2x" aria-hidden="true" ng-click="upRank(bean)"></i>
                 <i class="fa fa-thumbs-o-down fa-2x" aria-hidden="true" ng-click="downRank(bean)"></i>
             </div>

@@ -1,7 +1,21 @@
 <!--{{test}}-->
-<div class="container col-xs-12 col-md-8 col-lg-6">
-    <div class="jumbotron col-xs-12 col-md-8 col-lg-6">
+<div class="container col-xs-12 col-md-12 col-lg-12">
+    <div class="jumbotron col-xs-12 col-md-12 col-lg-12">
        <h3>Search for a Bean</h3>
         <criteria-selector></criteria-selector>
+        
+        <div class="well col-xs-12 col-sm-6 col-md-6 col-lg-6" ng-repeat="result in results track by $index">
+            <div class='bean-name col-xs-12 col-lg-12'>
+                <h3>{{result.name}}</h3>
+            </div>
+            <div class='col-xs-6 col-lg-6'>
+                
+                <h5> {{result.varietal}} Varietal</h5><br>
+                <h5>{{result.roast}} Roast</h5><br>
+                <h5>Originating from {{result.region}} </h5><br>
+                <h5>{{result.process}} Processing</h5><br>
+                
+            </div>
+        </div>
     </div>
 </div>
