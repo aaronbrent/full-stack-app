@@ -2,20 +2,54 @@
 <div class="container col-xs-12 col-md-12 col-lg-12">
     <div class="jumbotron col-xs-12 col-md-12 col-lg-12">
        <h3>Search for a Bean</h3>
+       <div ng-show="alert" class="alert alert-warning">
+            <h5><Strong>No results found</Strong></h5>
+        </div>
         <criteria-selector></criteria-selector>
         
-        <div class="well col-xs-12 col-sm-6 col-md-6 col-lg-6" ng-repeat="result in results track by $index">
+        <div class="well cards col-xs-12 col-sm-12 col-md-6 col-lg-6" ng-repeat="result in results track by $index">
             <div class='bean-name col-xs-12 col-lg-12'>
                 <h3>{{result.name}}</h3>
             </div>
-            <div class='col-xs-6 col-lg-6'>
-                
-                <h5> {{result.varietal}} Varietal</h5><br>
-                <h5>{{result.roast}} Roast</h5><br>
-                <h5>Originating from {{result.region}} </h5><br>
-                <h5>{{result.process}} Processing</h5><br>
+            <div class='image col-xs-6 col-lg-6'>
+                <img ng-src="{{result.image}}" /><br>
                 
             </div>
+
+            <div class='image col-xs-6 col-lg-6'>
+                <div ng-hide="result.pieChart" class="radar-chart" ac-chart="radar-chart">
+                    <canvas id="radar" class="chart chart-radar" chart-data="result.flavorNotes" chart-options="options" chart-labels="result.labels" chart-colors="colors">
+                </canvas>
+                </div>
+                <div ng-show="result.pieChart" class="pie-chart" ac-chart="pie-chart">
+                    <canvas id="pie" class="chart chart-pie" chart-data="result.flavorNotes" chart-labels="result.labels" chart-options="options">
+                </canvas>
+                </div>
+
+            </div>
+
+            <div class='params col-xs-12 col-lg-12'>
+
+                <h5> {{result.varietal}} Varietal</h5>
+                <h5>{{result.roast}} Roast</h5>
+                <h5>Originating from {{result.region}} </h5>
+                <h5>{{result.process}} Processing</h5>
+
+            </div>
+            <div class='row col-xs-12 col-lg-12'>
+                <span class='description'>{{result.description}}</span>
+            </div>
+            <div class='row col-xs-12 col-lg-12'>
+                <a target="_blank" id='purchase' ng-href="{{result.url}}">Purchase</a>
+            </div>
+
+<!--
+            <div class="row col-xs-2 col-lg-2 col-xs-offset-8 col-lg-offset-8">
+                {{result.rank}}
+                <i class="fa fa-thumbs-o-up fa-2x" aria-hidden="true" ng-click="upRank(bean)"></i>
+                <i class="fa fa-thumbs-o-down fa-2x" aria-hidden="true" ng-click="downRank(bean)"></i>
+            </div>
+-->
         </div>
     </div>
 </div>

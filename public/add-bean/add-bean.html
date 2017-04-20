@@ -1,20 +1,26 @@
-
 <div class="container col-xs-12 col-md-12 col-lg-12">
     <div class="jumbotron col-xs-12 col-md-12 col-lg-12">
-       <h3>Add a Bean</h3>
+        <h3>Add a Bean</h3>
         <div ng-show="success" class="alert alert-success">
             <h5>You successfully added <strong>{{success}}</strong></h5>
         </div>
         <div class="well col-xs-12 col-lg-12">
-            <input type="text" placeholder="Name" ng-model="newBean.name" />
-            <input type="text" placeholder="Place of Origin" ng-rmodel="newBean.region" />
-            <input type="text" placeholder="Description" ng-model="newBean.description" />
-            <input type="text" placeholder="Purchase URL" ng-model="newBean.url" />
-            <input type="text" placeholder="Image URL" ng-model="newBean.image" />
+            <div class="col-xs-12 col-md-6  col-lg-6">
+                <input class='inputs' type="text" placeholder="Name" ng-model="newBean.name" />
+                <input  class='inputs'type="text" placeholder="Place of Origin" ng-model="newBean.region" />
+            </div>
+            <div class="col-xs-12  col-md-6 col-lg-6">
+                <input class='inputs' type="text" placeholder="Purchase URL" ng-model="newBean.url" />
+                <input class='inputs' type="text" placeholder="Image URL" ng-model="newBean.image" />
+            </div>
+        <div class="col-xs-12 col-lg-12">
+
+            <textarea type="text" placeholder="Description" ng-model="newBean.description"></textarea> 
+        </div>
 
         </div>
-                <criteria-selector ></criteria-selector>
-<!--
+        <criteria-selector></criteria-selector>
+        <!--
         <div class="container profile-select">
             <div class="well">
 
@@ -110,9 +116,6 @@
             </div>
         </div>
 -->
-            
+
     </div>
 </div>
-
-
-

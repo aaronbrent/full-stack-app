@@ -1,37 +1,44 @@
 <div class="container col-xs-12 col-md-12 col-lg-12">
     <div class="jumbotron col-xs-12 col-md-12 col-lg-12">
-        <h3>Recommended</h3><br>
-        <div class="well col-xs-12 col-sm-6 col-md-6 col-lg-6" ng-repeat="bean in beans | orderBy: '-rank' track by $index">
+        <h3>User Recommendations</h3><br>
+        <div class="well col-xs-12 col-sm-12 col-md-12 col-lg-12" ng-repeat="bean in beans | orderBy: '-rank' track by $index">
             <div class='bean-name col-xs-12 col-lg-12'>
                 <h3>{{bean.name}}</h3>
             </div>
-            <div class='col-xs-6 col-lg-6'>
+            <div class='image col-xs-6 col-lg-6'>
+                <img ng-src="{{bean.image}}" /><br>
                 
-                <h5> {{bean.varietal}} Varietal</h5><br>
-                <h5>{{bean.roast}} Roast</h5><br>
-                <h5>Originating from {{bean.region}} </h5><br>
-                <h5>{{bean.process}} Processing</h5><br>
-                
-            </div>
-            <div class="col-xs-6 col-lg-6">
-                <img ng-src="{{bean.image}}"/><br>
-                <a ng-href="{{bean.url}}">Purchase</a>
-            </div><br>
-            <div class='row col-xs-12 col-lg-12'>
-            <p>{{bean.description}}</p>
             </div>
 
-            <div ng-hide="bean.pieChart" class="chart" ac-chart="radar-chart">
-                <canvas id="radar" class="chart chart-radar" chart-data="bean.flavorNotes" chart-options="options" chart-labels="bean.labels" chart-colors="colors">
+            <div class='image col-xs-6 col-lg-6'>
+                <div ng-hide="bean.pieChart" class="radar-chart" ac-chart="radar-chart">
+                    <canvas id="radar" class="chart chart-radar" chart-data="bean.flavorNotes" chart-options="options" chart-labels="bean.labels" chart-colors="colors">
                 </canvas>
-            </div>
-            <div ng-show="bean.pieChart" class="chart" ac-chart="pie-chart">
-                <canvas id="pie" class="chart chart-pie" chart-data="bean.flavorNotes" chart-labels="bean.labels" chart-options="options">
+                </div>
+                <div ng-show="bean.pieChart" class="pie-chart" ac-chart="pie-chart">
+                    <canvas id="pie" class="chart chart-pie" chart-data="bean.flavorNotes" chart-labels="bean.labels" chart-options="options">
                 </canvas>
+                </div>
+
             </div>
-            
-            <div class="row col-xs-2 col-lg-2 col-xs-offset-9 col-lg-offset-9">
-               {{bean.rank}}
+
+            <div class='params col-xs-12 col-lg-12'>
+
+                <h5> {{bean.varietal}} Varietal</h5>
+                <h5>{{bean.roast}} Roast</h5>
+                <h5>Originating from {{bean.region}} </h5>
+                <h5>{{bean.process}} Processing</h5>
+
+            </div>
+            <div class='row col-xs-12 col-lg-12'>
+                <span class='description'>{{bean.description}}</span>
+            </div>
+            <div class='row col-xs-12 col-lg-12'>
+                <a target="_blank" id='purchase' ng-href="{{bean.url}}">Purchase</a>
+            </div>
+
+            <div class="row col-xs-2 col-lg-2 col-xs-offset-8 col-lg-offset-8">
+                {{bean.rank}}
                 <i class="fa fa-thumbs-o-up fa-2x" aria-hidden="true" ng-click="upRank(bean)"></i>
                 <i class="fa fa-thumbs-o-down fa-2x" aria-hidden="true" ng-click="downRank(bean)"></i>
             </div>

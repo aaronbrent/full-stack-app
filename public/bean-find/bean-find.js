@@ -19,6 +19,9 @@ app.controller("findCtrl", function ($scope, httpService) {
 
         }
         
+        console.log(flavorNotes)
+        console.log(labels)
+        
         var largest = 0;
         for (var j = 0; j < flavorNotes.length; j++){
            
@@ -29,9 +32,10 @@ app.controller("findCtrl", function ($scope, httpService) {
         var index = flavorNotes.indexOf(largest)
         
         var indexLabel = labels.slice(index, index+1);
+        console.log(indexLabel)
         var strLabel = indexLabel.join('');
         if (indexLabel.length > 0){
-            searchLabel = ["&labels="];    
+            searchLabel = ["labels="];    
         }
         
         searchLabel.push(strLabel);
@@ -47,16 +51,53 @@ app.controller("findCtrl", function ($scope, httpService) {
             
         }
         
-        queryString.pop();
+//        queryString.pop();
         queryString.push(appendLabel)
         var query = queryString.join('')
         console.log(query)
         
         httpService.findBean(query).then(function (beans) {
                 console.log(beans)
+                if (beans.length < 1){
+                   $scope.alert = true; 
+                }else{
+                    $scope.alert = false;
+                }
                 $scope.results = beans
+                console.log(beans.length)
+                
+                
 
         });
+        
+        
     }
-    $scope.labels = ["FLORAL", "FRUITTY", "SOUR", "LEAFY", "ROASTED", "SPICED", "NUTTY", "CHOCOLATE", "SWEET"];
+    $scope.labels = ["Floral", "Fruity", "Sour", "Leafy", "Roasted", "Spiced", "Nutty", "Chocolate", "Sweet"];
+
+    
+     $scope.labelColors = [ '#803690', '#FF0000', '#FFF10B', '#21C848', '#E85C2A', '#949FB1', '#FFE36E', '#917F69', '#64FFE8']
+    
+//    
+         
+         
+     $scope.colors =  [
+        {
+        backgroundColor: "rgba(88, 243, 207, 0.2)",
+        borderColor: "rgba(88, 243, 207, 0.2)",
+        pointBackgroundColor: "rgba(88, 243, 207, 0.2)",
+        pointBorderColor: "#fff",
+        pointHoverBackgroundColor: "rgba(159,204,0,0.8)",
+        pointHoverBorderColor: "rgba(159,204,0,1)"
+        }
+    ]
+    
+    $scope.options = {
+        scale: {
+            ticks: {
+                beginAtZero: true,
+                max: 10
+
+            }
+        }
+    }
 });

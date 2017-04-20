@@ -2,7 +2,7 @@ var app = angular.module('coffeeApp', ['ngRoute', 'chart.js']);
 
 app.config(["$routeProvider", "ChartJsProvider", function ($routeProvider, ChartJsProvider) {
     
-    ChartJsProvider.setOptions({ colors : [ '#803690', '#00ADF9', '#DCDCDC', '#46BFBD', '#FDB45C', '#949FB1', '#4D5360'] });
+    ChartJsProvider.setOptions({ colors : [ '#803690', '#FF0000', '#FFF10B', '#21C848', '#E85C2A', '#949FB1', '#FFE36E', '#917F69', '#F6FFD5'] });
     
     $routeProvider
         .when("/home", {

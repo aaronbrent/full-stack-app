@@ -1,4 +1,5 @@
 body{
+    font-family: 'Raleway', sans-serif;
     color:rgba(55, 37, 5);
 } 
 
@@ -16,6 +17,8 @@ h4, h6{
 }
 h5{
     margin: 5px;
+    font-family: 'PT Sans', sans-serif;
+    display: inline;
 }
 
 h3 {
@@ -34,17 +37,26 @@ h3 {
 .btn {
     margin-top: 10px;
 }
-.chart {
-    width: 300px;
-    height: auto;
-    margin-left: 10%
+.radar-chart {
+    max-width: 100%;
+    max-height: 100%;
+   
+     margin: 0 auto;
+}
+
+.pie-chart {
+    margin-top:10%;
+    max-width: 70%;
+    max-height: 70%;
 }
 
 img{
-    max-height: 90%;
-    max-width:  90%;
+    margin: 0 auto;
+    max-height: 100%;
+    max-width:  100%;
     
 }
+
 
 .flavor-notes{
     display: inline;
@@ -54,21 +66,127 @@ img{
     margin-left: 18px;
 }
 #select-variatal{
-    margin-left: 6px;  
-}
-
-.pie-chart {
-    margin-top:70px;
-}
-
-.chart-colors{
-    color: red;
+    margin-left: 3px;  
 }
 
 i:hover{
     cursor: pointer;
     color:saddlebrown;
 }
-p{
-    font-size: 8px;
+
+.description{
+    font-size: 16px;
 }
+
+.params{
+    margin-top: 20px;
+    margin-bottom: 20px;
+}
+
+#purchase {
+    margin: 0 auto;
+    text-align: center;
+}
+
+textarea{
+    margin-top: 10px;
+    width: 400px;
+    height: 100px;
+}
+
+.inputs{
+    margin-right: 20px;
+}
+
+.flavor-notes{
+    margin-bottom: 20px;
+}
+.numbers{
+    margin-right: 5px;
+    margin-left: 5px;
+}
+.notes-text {
+    
+    border-radius: 5px;
+    padding: 8px;
+}
+
+.cards {
+    min-height: 600px;
+}
+
+/*#floral-slide::-webkit-slider-thumb {*/
+#floral-slide::-webkit-slider-runnable-track {
+
+    background: #803690;
+}
+
+
+/*#fruity-slide::-webkit-slider-thumb{*/
+#fruity-slide::-webkit-slider-runnable-track {
+    background: #FF0000;
+}
+
+/*#sour-slide::-webkit-slider-thumb {*/
+#sour-slide::-webkit-slider-runnable-track {
+    background: #FFF10B;
+}
+
+/*#leafy-slide::-webkit-slider-thumb {*/
+#leafy-slide::-webkit-slider-runnable-track {
+    background: #21C848;
+}
+
+
+#roast-slide::-webkit-slider-runnable-track {
+/*#roast-slide::-webkit-slider-thumb {*/
+    background: #E85C2A;
+}
+
+/*#spice-slide::-webkit-slider-thumb {*/
+#spice-slide::-webkit-slider-runnable-track {
+    background: #949FB1;
+}
+
+/*#nut-slide::-webkit-slider-thumb {*/
+#nut-slide::-webkit-slider-runnable-track {
+    background: #FFE36E;
+}
+
+/*#choc-slide::-webkit-slider-thumb {*/
+#choc-slide::-webkit-slider-runnable-track {
+    background: #917F69;
+}
+
+/*#sweet-slide::-webkit-slider-thumb {*/
+#sweet-slide::-webkit-slider-runnable-track {
+    background: #64FFE8;
+}
+
+input[type=range]{
+/*    -webkit-appearance: none;*/
+}
+
+input[type=range]:hover{
+    cursor: pointer;
+}
+
+input[type=range]::-webkit-slider-runnable-track {
+    width: 300px;
+    height: 5px;
+    background: #ddd;
+    border: none;
+    border-radius: 3px;
+}
+/*^^^^^^*/
+/*You can give each one it's induvidal color here with backgrounds*/
+input[type=range]::-webkit-slider-thumb {
+    -webkit-appearance: none;
+    border: none;
+    height: 16px;
+    width: 16px;
+    border-radius: 50%;
+    background: silver;
+    margin-top: -5px;
+}
+

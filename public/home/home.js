@@ -12,9 +12,9 @@ app.controller("homeCtrl", function($scope, httpService){
     
     $scope.colors =  [
         {
-        backgroundColor: "rgba(243, 237, 220, 0.5)",
-        borderColor: "rgba(243, 237, 220, 0.5)",
-        pointBackgroundColor: "rgba(243, 237, 220, 0.5)",
+        backgroundColor: "rgba(88, 243, 207, 0.2)",
+        borderColor: "rgba(88, 243, 207, 0.2)",
+        pointBackgroundColor: "rgba(88, 243, 207, 0.2)",
         pointBorderColor: "#fff",
         pointHoverBackgroundColor: "rgba(159,204,0,0.8)",
         pointHoverBorderColor: "rgba(159,204,0,1)"
