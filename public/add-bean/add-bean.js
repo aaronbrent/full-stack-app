@@ -39,7 +39,7 @@ app.controller("addCtrl", function ($scope, httpService) {
         $scope.success = newBean.name;
     }
 
-    $scope.labelColors = [ '#803690', '#FF0000', '#FFF10B', '#21C848', '#E85C2A', '#949FB1', '#FFE36E', '#917F69', '#64FFE8']
+    $scope.labelColors = [ '#E3CCFF', '#FFE8E1', '#FBFFE7', '#DDFFD8', '#AB8E7B', '#FF9485', '#FFD995', '#4A261C', '#D4FFFF']
 
 
     $scope.data = [];

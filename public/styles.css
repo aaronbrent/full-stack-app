@@ -118,49 +118,49 @@ textarea{
 /*#floral-slide::-webkit-slider-thumb {*/
 #floral-slide::-webkit-slider-runnable-track {
 
-    background: #803690;
+    background: #E3CCFF;
 }
 
 
 /*#fruity-slide::-webkit-slider-thumb{*/
 #fruity-slide::-webkit-slider-runnable-track {
-    background: #FF0000;
+    background: #FFE8E1;
 }
 
 /*#sour-slide::-webkit-slider-thumb {*/
 #sour-slide::-webkit-slider-runnable-track {
-    background: #FFF10B;
+    background: #FBFFE7;
 }
 
 /*#leafy-slide::-webkit-slider-thumb {*/
 #leafy-slide::-webkit-slider-runnable-track {
-    background: #21C848;
+    background: #DDFFD8;
 }
 
 
 #roast-slide::-webkit-slider-runnable-track {
 /*#roast-slide::-webkit-slider-thumb {*/
-    background: #E85C2A;
+    background: #AB8E7B;
 }
 
 /*#spice-slide::-webkit-slider-thumb {*/
 #spice-slide::-webkit-slider-runnable-track {
-    background: #949FB1;
+    background: #FF9485;
 }
 
 /*#nut-slide::-webkit-slider-thumb {*/
 #nut-slide::-webkit-slider-runnable-track {
-    background: #FFE36E;
+    background: #FFD995;
 }
 
 /*#choc-slide::-webkit-slider-thumb {*/
 #choc-slide::-webkit-slider-runnable-track {
-    background: #917F69;
+    background: #4A261C;
 }
 
 /*#sweet-slide::-webkit-slider-thumb {*/
 #sweet-slide::-webkit-slider-runnable-track {
-    background: #64FFE8;
+    background: #D4FFFF;
 }
 
 input[type=range]{
@@ -188,5 +188,14 @@ input[type=range]::-webkit-slider-thumb {
     border-radius: 50%;
     background: silver;
     margin-top: -5px;
+}
+
+.flavor-notes, 
+.drop-downs {
+    background-color: rgba(18, 139, 109, 0.04);
+}
+
+.profile-select {
+    background-color: rgba(0, 4, 1, 0.05);
 }
 
