@@ -4,7 +4,7 @@ app.service("httpService", function ($http) {
 
     this.getCall = function () {
         var list = {};
-        return $http.get('http://localhost:8000/bean/').then(function (response) {
+        return $http.get('/bean/').then(function (response) {
             console.log(response.data);
             list = response.data;
             return list;
@@ -14,7 +14,7 @@ app.service("httpService", function ($http) {
     
     this.findBean = function (searchBean) {
         var list = {};
-        return $http.get('http://localhost:8000/bean/' + searchBean).then(function (response) {
+        return $http.get('/bean/' + searchBean).then(function (response) {
             
             list = response.data;
             return list;
@@ -24,7 +24,7 @@ app.service("httpService", function ($http) {
 
     this.addBean = function (newBean) {
         var post = {};
-        return $http.post('http://localhost:8000/bean/', newBean)
+        return $http.post('/bean/', newBean)
             .then(function (response) {
                 console.log(response.data);
                 bean = response.data;
@@ -34,7 +34,7 @@ app.service("httpService", function ($http) {
 
     this.deleteBean = function (bean) {
         var id = bean._id
-        return $http.delete('http://localhost:8000/bean/' + id).then(function (response) {
+        return $http.delete('/bean/' + id).then(function (response) {
             return "You have deleted the item with id " + id;
         })
 
@@ -42,7 +42,7 @@ app.service("httpService", function ($http) {
 
 
     this.editBean = function (bean) {
-        return $http.put('http://localhost:8000/bean/' + bean._id, bean);
+        return $http.put('/bean/' + bean._id, bean);
     }
 
 
